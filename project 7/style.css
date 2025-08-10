@@ -1,0 +1,78 @@
+body {
+  background: black;
+  color: black;
+  margin: 20px;
+  line-height: 1.5;
+}
+
+h1, h2 {
+  font-weight: 900;
+  text-transform: lowercase;
+  text-align: center;
+  color: white;
+  text-shadow: 0 0 5px #ae2012, 0 0 10px #ae2012, 0 0 15px #ae2012;
+  margin-bottom: 12px;
+}
+p {
+  font-size: 18px;
+  color: white;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  text-align: justify;
+  text-shadow: 
+    0 0 5px #0d3b66,
+    0 0 10px #0d3b66,
+    0 0 20px #0d3b66,
+    0 0 40px #0d3b66;
+}
+
+ul {
+  max-width: 700px;
+  margin: 0 auto 20px;
+  padding-left: 20px;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  text-shadow: 
+    0 0 5px #0d3b66,
+    0 0 10px #0d3b66,
+    0 0 20px #0d3b66,
+    0 0 40px #0d3b66,
+    0 0 80px #0d3b66;
+}
+
+
+li {
+  margin-bottom: 8px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin: 20px auto;
+  box-shadow: 3px 3px 6px rgba(174, 32, 18, 0.5);
+}
+
+div {
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #0d3b66;
+  overflow: hidden;
+}
+
+span {
+  color: white;
+  font-weight: 900;
+  text-shadow: 0 0 5px #ae2012;
+}
+
+#special-highlight {
+  color: #ae2012;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: 0 0 5px #0d3b66, 0 0 10px #0d3b66;
+}
