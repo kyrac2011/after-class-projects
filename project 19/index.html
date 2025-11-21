@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>emoji calculator</title>
+</head>
+<body>
+
+    <h2>simple emoji calculator</h2>
+
+    <label>enter first number:</label>
+    <input id="num1" type="number"><br><br>
+
+    <label>enter second number:</label>
+    <input id="num2" type="number"><br><br>
+
+    <label>choose an operation:</label><br>
+    ➕ addition<br>
+    ➖ subtraction<br>
+    ✖️ multiplication<br>
+    ➗ division<br><br>
+
+    <input id="op" type="text" placeholder="enter emoji here"><br><br>
+
+    <button onclick="calculate()">calculate</button>
+
+    <h3 id="result"></h3>
+
+    <script>
+        function calculate() {
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let op = document.getElementById("op").value;
+            let resultText = "";
+
+            if (op === "➕") {
+                resultText = "result: " + (num1 + num2);
+            }
+            else if (op === "➖") {
+                resultText = "result: " + (num1 - num2);
+            }
+            else if (op === "✖️") {
+                resultText = "result: " + (num1 * num2);
+            }
+            else if (op === "➗") {
+                if (num2 !== 0) {
+                    resultText = "result: " + (num1 / num2);
+                } else {
+                    resultText = "error: cannot divide by zero!";
+                }
+            }
+            else {
+                resultText = "invalid emoji operator!";
+            }
+
+            document.getElementById("result").innerHTML = resultText;
+        }
+    </script>
+
+</body>
+</html>
