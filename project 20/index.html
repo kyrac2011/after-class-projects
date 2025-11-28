@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>multiplication using functions</title>
+</head>
+<body>
+<center>
+<h1 style="color:lightcoral">multiplication using functions 🦀</h1>
+<h3>introduction to functions in javascript!!</h3>
+<p>click the button to multiply two numbers using a function:</p>
+
+<!-- button to make function -->
+<button onclick="multiplyNumbers(6, 7)">multiply 6 and 7 🌊</button>
+
+<!-- place to show result -->
+<p id="result"></p>
+
+<script>
+// function to multiply two numbers
+function multiplyNumbers(a, b) {
+    var result = a * b; // multiply the numbers
+    document.getElementById("result").innerHTML = "result: " + result;
+}
+</script>
+</center>
+</body>
+</html>
