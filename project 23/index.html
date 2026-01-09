@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dessert array project 🍰🍦</title>
+  <style>
+
+  </style>
+</head>
+<body>
+
+<h2>javascript dessert array 🍩🍪</h2>
+<p id="demo-index"></p>
+
+<h2>array methods: join() and pop() 🍫🍓</h2>
+<p id="myjoin"></p>
+<p id="myfirstpop"></p>
+<p id="mysecondpop"></p>
+
+<h2>dessert calculation 🍰🍨</h2>
+<p id="dessert-result"></p>
+
+<script>
+
+var desserts = ["cake 🎂", "ice cream 🍦", "pie 🥧", "brownie 🍫"];
+
+
+document.getElementById("demo-index").innerHTML = desserts[2];
+
+
+document.getElementById("myjoin").innerHTML =  desserts.join(" * ");
+document.getElementById("myfirstpop").innerHTML = desserts;
+desserts.pop(); 
+document.getElementById("mysecondpop").innerHTML = desserts;
+
+
+function add(a, b) {
+  return a + b;
+}
+function average(a, b) {
+  return add(a, b) / 2;
+}
+
+let Cake = 8;
+let IceCream = 10;
+let sweet = average(Cake, IceCream);
+document.getElementById("dessert-result").innerHTML = "average sweetness of cake 🎂 and ice cream 🍦 is " + sweet;
+
+</script>
+
+</body>
+</html>
