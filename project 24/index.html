@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>space dom</title>
+</head>
+
+<body>
+
+<h1 id="one">welcome to space 🌌</h1>
+<p>this is the welcome message from orbit 🚀</p>
+<h2>technology</h2>
+<p>this is the technology section in space 🛰️</p>
+
+<p>adding js as seperate file 🌠</p>
+<button type="button" onclick="myFunction()">launch</button>
+<p id="demo"></p>
+
+<p id="message"></p>
+
+<script>
+  var text = document.getElementById("one").innerHTML
+  alert("the first heading is " + text)
+
+  function validate(e) {
+    e.preventDefault()
+
+    const email = document.getElementById('email').value
+    const pass = document.getElementById('password').value
+    const age = document.getElementById('age').value
+    const msgBox = document.getElementById('message')
+
+    let message = ''
+
+    if (email === '') {
+      message = 'enter an email'
+      msgBox.style.color = 'red'
+    } else if (pass === '') {
+      message = 'enter a password'
+      msgBox.style.color = 'red'
+    } else if (age === '') {
+      message = 'enter your age'
+      msgBox.style.color = 'red'
+    } else {
+      message = 'login successful'
+      msgBox.style.color = 'green'
+    }
+
+    msgBox.innerText = message
+  }
+
+  function myFunction() {
+    var a = 120
+    document.getElementById("demo").innerHTML = a * a
+  }
+</script>
+
+</body>
+</html>
