@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Classes Example</h2>
+
+<p id="hello"></p>
+<p id="hi"></p>
+<p id="welcome"></p>
+<p id="car"></p>
+<p id="student"></p>
+
+<script>
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+  greet() {
+    return "Hi " + this.name;
+  }
+  static hello() {
+    return "Hello!";
+  }
+  static welcome(person) {
+    return "Welcome " + person.name;
+  }
+}
+
+let p = new Person("");
+document.getElementById("hello").innerHTML = Person.hello();
+document.getElementById("hi").innerHTML = p.greet();
+document.getElementById("welcome").innerHTML = Person.welcome(p);
+
+class Car {
+  constructor(brand) {
+    this.brand = brand;
+  }
+  info() {
+    return "I have a " + this.brand;
+  }
+}
+
+class Model extends Car {
+  constructor(brand, model) {
+    super(brand);
+    this.model = model;
+  }
+  show() {
+    return this.info() + ", it is a " + this.model;
+  }
+}
+
+let myCar = new Model("Ford", "Mustang");
+document.getElementById("car").innerHTML = myCar.show();
+
+class Student {
+  constructor(name, year) {
+    this.name = name;
+    this.year = year;
+  }
+  age() {
+    return new Date().getFullYear() - this.year;
+  }
+}
+
+let s = new Student("Kyra", 2011);
+document.getElementById("student").innerHTML =
+  "My name is " + s.name + ". Age: " + s.age();
+</script>
+</body>
+</html>
