@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>JavaScript Array Map and Sort</title>
+</head>
+
+<body>
+
+<h2>map and sort array 🎀</h2>
+<p>click the button to map and sort the array ⬇️</p>
+
+<button onclick="ascending()">ascending order 📈 </button>
+<button onclick="descending()">descending order 📉</button>
+
+<p id="result"></p>
+
+<script>
+
+var numbers = [28, 6, 19, 95];
+
+function multiply(num) {
+return num * 10;
+}
+
+var newarray = numbers.map(multiply);
+document.getElementById("result").innerHTML = newarray;
+
+function ascending() {
+newarray.sort(function(a, b) {
+return a - b;
+});
+document.getElementById("result").innerHTML = newarray;
+}
+
+function descending() {
+newarray.sort(function(a, b) {
+return b - a;
+});
+document.getElementById("result").innerHTML = newarray;
+}
+
+</script>
+
+</body>
+</html>
