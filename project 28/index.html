@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Error Handling Example</h2>
+<p>Click the button to see an error message.</p>
+
+<button onclick="showError()">Click Me</button>
+
+<p id="message"></p>
+
+<script>
+
+function showError(){
+
+try{
+
+// this function does NOT exist so it creates an error
+welcomeUser("Hello Guest");
+
+}
+
+catch(err){
+
+// display the error message on the page
+document.getElementById("message").innerHTML = err.message;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
