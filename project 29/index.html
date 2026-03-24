@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JSON and Async/Await Project</h2>
+<p id="result"></p>
+
+<script>
+
+// javaScript object
+var myobj = { name: "Kyra", age: 14, grade: 9 };
+
+// convert object to JSON
+var myJSON = JSON.stringify(myobj);
+
+// convert JSON back to object
+var newObj = JSON.parse(myJSON);
+
+// async function that depends on JSON result
+async function showStudent() {
+  let response = await newObj.name + " is " + newObj.age + " years old and in grade " + newObj.grade;
+  display(response);
+}
+
+// display function
+function display(data) {
+  document.getElementById("result").innerHTML = data;
+}
+
+// call async function
+showStudent();
+
+</script>
+
+</body>
+</html>
