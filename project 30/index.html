@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>calculator</title>
+    <style>
+        #calculator { width: 220px; margin: 50px auto; }
+        input[type="button"], input[type="text"] {
+            width: 50px; height: 50px; margin: 2px; font-size: 18px;
+        }
+        #result { width: 208px; text-align: right; }
+        input[type="button"]:hover { cursor: pointer;}
+    </style>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" id="result" value="" readonly /><br/>
+
+        <!-- Buttons -->
+        <input type="button" value="7" onclick="setScreenValue('7')" />
+        <input type="button" value="8" onclick="setScreenValue('8')" />
+        <input type="button" value="9" onclick="setScreenValue('9')" />
+        <input type="button" value="/" onclick="setScreenValue('/')" /><br/>
+
+        <input type="button" value="4" onclick="setScreenValue('4')" />
+        <input type="button" value="5" onclick="setScreenValue('5')" />
+        <input type="button" value="6" onclick="setScreenValue('6')" />
+        <input type="button" value="*" onclick="setScreenValue('*')" /><br/>
+
+        <input type="button" value="1" onclick="setScreenValue('1')" />
+        <input type="button" value="2" onclick="setScreenValue('2')" />
+        <input type="button" value="3" onclick="setScreenValue('3')" />
+        <input type="button" value="-" onclick="setScreenValue('-')" /><br/>
+
+        <input type="button" value="0" onclick="setScreenValue('0')" />
+        <input type="button" value="." onclick="setScreenValue('.')" />
+        <input type="button" value="+" onclick="setScreenValue('+')" /><br/>
+
+        <input type="button" value="=" style="width: 212px;" onclick="calculateResult()" />
+    </div>
+
+    <script>
+        // Appends clicked value
+        function setScreenValue(value) {
+            const constr = document.getElementById("result");
+            // If previous value was an error, start fresh
+            if (constr.value === "Enter an expression" || constr.value === "Invalid expression") {
+                constr.value = "";
+            }
+            constr.value += value;
+        }
+
+        // Calculates the result
+        function calculateResult() {
+            const resultElement = document.getElementById("result");
+            const expression = resultElement.value.trim();
+
+            if (expression === "") {
+                resultElement.value = "Enter an expression";
+                return;
+            }
+
+            try {
+                const result = eval(expression);
+                if (result === undefined) {
+                    resultElement.value = "Invalid expression";
+                } else {
+                    resultElement.value = result;
+                }
+            } catch (e) {
+                resultElement.value = "Invalid expression";
+            }
+        }
+    </script>
+</body>
+</html>
