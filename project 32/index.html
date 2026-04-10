@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!-- bootstrap css -->
+<link rel="stylesheet"
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+<!-- font awesome -->
+<script src="https://kit.fontawesome.com/996973c893.js"></script>
+
+<!-- google fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;600;700;800&family=Roboto+Slab:wght@200;400;600;900&display=swap"
+rel="stylesheet" />
+
+<title>restaurant portfolio</title>
+
+<style>
+body{
+    margin:0;
+    font-family: "Baloo Tamma 2", sans-serif;
+    background:#111;
+}
+
+/* navbar */
+.navigation{
+    background: #222;
+    border-top:2px solid #ffb347;
+    padding:12px 40px !important;
+}
+
+.navigation-link{
+    text-decoration:none;
+    font-size:14px;
+    font-weight:500;
+    color:#fff !important;
+}
+
+.navigation-link:hover{
+    color:#ffb347 !important;
+}
+
+/* about section */
+.about{
+    background:#1a1a1a;
+    color:white;
+}
+
+/* cards */
+.card{
+    border:none;
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.card img{
+    object-fit:cover;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- navbar -->
+<div class="container-fluid navigation pt-3">
+<div class="row">
+<div class="col-6 d-flex justify-content-start align-items-center">
+<i class="fas fa-utensils fa-2x text-warning pb-3"></i>
+<h5 class="d-inline pl-2 text-white">foodie spot 🍔</h5>
+</div>
+
+<div class="col-6 pt-2">
+<div class="row text-center p-0 d-flex justify-content-end align-items-center">
+
+<div class="col-3">
+<a href="#about" class="navigation-link">about</a>
+</div>
+
+<div class="col-3">
+<a href="#projects" class="navigation-link">menu</a>
+</div>
+
+<div class="col-3">
+<a href="#" class="navigation-link">contact</a>
+</div>
+
+<div class="col-3">
+<a href="#" class="navigation-link">book</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-- about section -->
+<div id="about" class="container about p-5">
+<div class="row">
+<div class="col-6">
+<img src="https://i.pinimg.com/736x/bd/df/c9/bddfc9efc989415ade4519000e963b2d.jpg" class="img-fluid" />
+</div>
+
+<div class="col-6 pl-5 pt-5 pb-5">
+<h3 class="text-warning">about our food 🍕</h3>
+<h1>a little taste of us 🍽️</h1>
+
+<p>
+we serve delicious meals made with love 💛
+</p>
+
+<p>
+fresh ingredients 🏡🍝.
+</p>
+
+<button class="btn btn-outline-warning">learn more 🍴</button>
+</div>
+</div>
+</div>
+
+<!-- projects / menu section -->
+<div id="projects" class="container mt-5 pt-5">
+<h1 class="text-warning mb-3 pb-2">our favorites 🍽️</h1>
+
+<div class="row">
+
+<div class="col-4 mb-5">
+<div class="card" style="width: 18rem;">
+<img src="https://i.pinimg.com/736x/d8/51/3b/d8513bf57aabcc834a3f12e35c6a4a4d.jpg" class="card-img-top" style="height: 13rem;" />
+<div class="card-body">
+<h5 class="card-title">burger 🍔</h5>
+<p class="card-text">juicy</p>
+<a href="#" class="btn btn-warning">order 🍟</a>
+</div>
+</div>
+</div>
+
+<div class="col-4 mb-5">
+<div class="card" style="width: 18rem;">
+<img src="https://i.pinimg.com/736x/90/5a/9e/905a9e82e79f7d10b76703b77ba351a5.jpg" class="card-img-top" style="height: 13rem;" />
+<div class="card-body">
+<h5 class="card-title">pizza 🍕</h5>
+<p class="card-text">cheesy</p>
+<a href="#" class="btn btn-warning">order 🍟</a>
+</div>
+</div>
+</div>
+
+<div class="col-4 mb-5">
+<div class="card" style="width: 18rem;">
+<img src="https://i.pinimg.com/736x/4c/d0/6f/4cd06f5ffeba4147d1ee2c3a995767b7.jpg" class="card-img-top" style="height: 13rem;" />
+<div class="card-body">
+<h5 class="card-title">pasta 🍝</h5>
+<p class="card-text">creamy</p>
+<a href="#" class="btn btn-warning">order 🍟</a>
+</div>
+</div>
+</div>
+
+<div class="col-4 mb-5">
+<div class="card" style="width: 18rem;">
+<img src="https://i.pinimg.com/736x/f4/e2/75/f4e275c59e39bb16be059059eff92e74.jpg" class="card-img-top" style="height: 13rem;" />
+<div class="card-body">
+<h5 class="card-title">dessert 🍰</h5>
+<p class="card-text">sweet</p>
+<a href="#" class="btn btn-warning">order 🍟</a>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+
+</body>
+</html>
