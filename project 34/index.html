@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank App Calculator</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#calculator {
+    width: 260px;
+    background: #222;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+#display {
+    background: black;
+    color: white;
+    text-align: right;
+    padding: 15px;
+    font-size: 24px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+button {
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.number {
+    background: #eee;
+}
+
+.operator {
+    background: rgb(212, 0, 255);
+    color: white;
+}
+
+.empty {
+    background: transparent;
+}
+
+.bank-buttons {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.bank-buttons button {
+    flex: 1;
+    background: #00c853;
+    color: white;
+}
+
+.balance {
+    margin-top: 10px;
+    font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="calculator">
+
+    <!-- Display -->
+    <div id="display">0</div>
+
+    <!-- Buttons -->
+    <div id="keyboard">
+        <button class="operator" onclick="clearAll()">C</button>
+        <button class="operator" onclick="clearEntry()">CE</button>
+        <button class="operator" onclick="append('%')">%</button>
+        <button class="operator" onclick="append('/')">/</button>
+
+        <button class="number" onclick="append('7')">7</button>
+        <button class="number" onclick="append('8')">8</button>
+        <button class="number" onclick="append('9')">9</button>
+        <button class="operator" onclick="append('*')">*</button>
+
+        <button class="number" onclick="append('4')">4</button>
+        <button class="number" onclick="append('5')">5</button>
+        <button class="number" onclick="append('6')">6</button>
+        <button class="operator" onclick="append('-')">-</button>
+
+        <button class="number" onclick="append('1')">1</button>
+        <button class="number" onclick="append('2')">2</button>
+        <button class="number" onclick="append('3')">3</button>
+        <button class="operator" onclick="append('+')">+</button>
+
+        <button class="empty"></button>
+        <button class="number" onclick="append('0')">0</button>
+        <button class="empty"></button>
+        <button class="operator" onclick="calculate()">=</button>
+    </div>
+
+    <!-- Bank Buttons -->
+    <div class="bank-buttons">
+        <button onclick="addIncome()">+ Income</button>
+        <button onclick="addExpense()">- Expense</button>
+    </div>
+
+    <!-- Balance -->
+    <div class="balance" id="balance">Balance: 0</div>
+
+</div>
+
+<script>
+let display = document.getElementById("display");
+let balance = 0;
+
+function append(value) {
+    if (display.innerText === "0") {
+        display.innerText = value;
+    } else {
+        display.innerText += value;
+    }
+}
+
+function clearAll() {
+    display.innerText = "0";
+}
+
+function clearEntry() {
+    display.innerText = display.innerText.slice(0, -1) || "0";
+}
+
+function calculate() {
+    try {
+        display.innerText = eval(display.innerText);
+    } catch {
+        display.innerText = "Error";
+    }
+}
+
+function updateBalance() {
+    document.getElementById("balance").innerText = "Balance: " + balance;
+}
+
+function addIncome() {
+    balance += Number(display.innerText);
+    updateBalance();
+    clearAll();
+}
+
+function addExpense() {
+    balance -= Number(display.innerText);
+    updateBalance();
+    clearAll();
+}
+</script>
+
+</body>
+</html>
