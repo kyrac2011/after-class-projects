@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Calculator App</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      width: 760px;
+      height: 390px;
+      background-color: #bfbfbf;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* LEFT GREEN SHAPES */
+    .green-shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 400px;
+      height: 210px;
+      background-color: #0f553f;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 52%);
+    }
+
+    .green-shadow {
+      position: absolute;
+      top: 135px;
+      left: 0;
+      width: 400px;
+      height: 190px;
+      background-color: rgba(28, 126, 91, 0.45);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+    }
+
+    /* RIGHT BLUE SHAPES */
+    .blue-shape {
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+      width: 270px;
+      height: 200px;
+      background-color: rgba(71, 111, 166, 0.45);
+      clip-path: polygon(25% 20%, 100% 0, 100% 100%, 55% 100%);
+    }
+
+    .blue-dark {
+      position: absolute;
+      right: -5px;
+      bottom: 5px;
+      width: 210px;
+      height: 160px;
+      background-color: rgba(38, 78, 134, 0.65);
+      clip-path: polygon(30% 25%, 100% 0, 100% 100%, 52% 100%);
+    }
+
+    /* BANK APP CARD */
+    .bank-app {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 260px;
+      height: 350px;
+      background-color: #f1f3f4;
+      border-radius: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    p {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+
+    input {
+      width: 200px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      background-color: #ddd;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 10px;
+      justify-items: center;
+    }
+
+    button {
+      width: 90px;
+      height: 40px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      color: white;
+    }
+
+    .credit-btn {
+      background-color: #25c4b8;
+    }
+
+    .debit-btn {
+      background-color: #ff8181;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .balance-box {
+      margin-top: 30px;
+      padding: 15px;
+      background-color: #e3e3e3;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #balance {
+      color: #0f553f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="green-shape"></div>
+    <div class="green-shadow"></div>
+
+    <div class="blue-shape"></div>
+    <div class="blue-dark"></div>
+
+    <div class="bank-app">
+
+      <h1>Bank App</h1>
+
+      <p>Enter Transaction Amount</p>
+
+      <input type="number" id="amount" placeholder="Enter amount">
+
+      <div class="buttons">
+        <button class="credit-btn" onclick="credit()">Credit</button>
+        <button class="debit-btn" onclick="debit()">Debit</button>
+      </div>
+
+      <div class="balance-box">
+        Balance : Rs. <span id="balance">0</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    let balance = 0;
+
+    function credit() {
+      let amount = document.getElementById("amount").value;
+
+      amount = Number(amount);
+
+      balance = balance + amount;
+
+      document.getElementById("balance").innerText = balance;
+    }
+
+    function debit() {
+      let amount = document.getElementById("amount").value;
+
+      amount = Number(amount);
+
+      balance = balance - amount;
+
+      document.getElementById("balance").innerText = balance;
+    }
+  </script>
+
+</body>
+</html>
