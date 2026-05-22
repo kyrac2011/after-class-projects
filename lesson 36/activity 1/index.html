@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Calculator</title>
+
+<style>
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* Background image */
+    background: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?q=80&w=1200&auto=format&fit=crop')
+    no-repeat center center/cover;
+}
+
+.calculator {
+    width: 260px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+}
+
+.display {
+    height: 60px;
+    background: #e0e3e8;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: right;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+button {
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.add { background: #2ec4b6; color: white; }
+.mul { background: #ff9f1c; color: white; }
+.sub { background: #ff6b6b; color: white; }
+.div { background: #5e60ce; color: white; }
+.eq  { background: #8e44ad; color: white; }
+</style>
+</head>
+
+<body>
+
+<div class="calculator">
+
+    <div class="display" id="display">0</div>
+
+    <div class="buttons">
+        <button onclick="clearAll()">C</button>
+        <button onclick="clearOne()">CE</button>
+        <button onclick="append('%')">%</button>
+        <button class="add" onclick="append('+')">+</button>
+
+        <button onclick="append('7')">7</button>
+        <button onclick="append('8')">8</button>
+        <button onclick="append('9')">9</button>
+        <button class="mul" onclick="append('*')">×</button>
+
+        <button onclick="append('4')">4</button>
+        <button onclick="append('5')">5</button>
+        <button onclick="append('6')">6</button>
+        <button class="sub" onclick="append('-')">−</button>
+
+        <button onclick="append('1')">1</button>
+        <button onclick="append('2')">2</button>
+        <button onclick="append('3')">3</button>
+        <button class="div" onclick="append('/')">÷</button>
+
+        <button style="grid-column: span 2; border-radius: 25px;" onclick="append('0')">0</button>
+        <button onclick="append('.')">.</button>
+        <button class="eq" onclick="calculate()">=</button>
+    </div>
+
+</div>
+
+<script>
+let display = document.getElementById("display");
+
+function append(value) {
+    if (display.innerText === "0") {
+        display.innerText = value;
+    } else {
+        display.innerText += value;
+    }
+}
+
+function clearAll() {
+    display.innerText = "0";
+}
+
+function clearOne() {
+    display.innerText = display.innerText.slice(0, -1);
+
+    if (display.innerText === "") {
+        display.innerText = "0";
+    }
+}
+
+function calculate() {
+    try {
+        display.innerText = eval(display.innerText);
+    } catch {
+        display.innerText = "Error";
+    }
+}
+</script>
+
+</body>
+</html>
